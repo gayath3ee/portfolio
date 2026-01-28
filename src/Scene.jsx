@@ -3,7 +3,7 @@ import { OrbitControls, Float } from "@react-three/drei";
 
 function Box() {
   return (
-    <Float speed={2} rotationIntensity={1}>
+    <Float speed={4} rotationIntensity={2}>
       <mesh>
         <boxGeometry args={[2, 2, 2]} />
         <meshStandardMaterial color="#00ffcc" />
@@ -18,7 +18,12 @@ export default function Scene() {
       <ambientLight intensity={0.6} />
       <directionalLight position={[5, 5, 5]} />
       <Box />
-      <OrbitControls enableZoom={false} />
+      <OrbitControls
+       enableZoom={false}
+       rotateSpeed={2.5}
+       dampingFactor={0.05}
+/>
+
     </Canvas>
   );
 }
